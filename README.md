@@ -5,7 +5,7 @@
 
 ## Code
 
-jQuery
+### jQuery
 ```html
 $(function(){
   $('#slide').SimpleSlider({
@@ -17,7 +17,16 @@ $(function(){
 });
 
 ```
-HTML
+
+### HTML
+書く要素はul>liの形で書いて下さい。  
+```html
+<ul>
+  <li></li>
+</ul>
+```
+
+#### 例
 ```html
 <div id="slide">
   <ul class="cf">
