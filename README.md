@@ -1,6 +1,7 @@
 # simpleSlide
 
 名前の通りシンプルなスライダです。  
+[DEMO](http://rosettahalt.github.com/simpleSlide/)
 
 ## Code
 
