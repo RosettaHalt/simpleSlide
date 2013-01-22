@@ -1,12 +1,27 @@
-@import "normalize.less";
-
+li{
+  list-style: none;
+}
 .slide_box{
   position: relative;
-  overflow: hidden;
 }
 #slide{
   padding-top: 15px;
   margin-left: 20px;
   z-index: 0;
   width: 720px;
+  overflow: hidden;
+  ul{
+    position: relative;
+    li{
+      position: absolute;
+      float: left;
+    }
+  }
+}
+.slide_content{
+  ul{
+    li{
+      position: absolute;
+    }
+  }
 }

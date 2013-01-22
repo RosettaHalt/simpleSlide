@@ -3,19 +3,22 @@
     var opts = $.extend({}, $.fn.SimpleSlider.defaults, options);
 
     var slideIterator = 0;
-    var slide_ul = $(this).children("ul");
-    var slide_li = $(this).children("ul").children("li");
-    var slideNav = $(opts.navElement).children("ul").children("li");
+    var slide_ul = $(this).find("ul");
+    var slide_li = $(this).find("li");
+    var slideNav = $(opts.navElement).find("li");
+    var arrowNav = $(opts.arrowNavElement);
     var slideWidth = [0];
-    var slideContent = $(opts.contentElement);
+    var slideContent = $(opts.contentElement).find("li");;
 
     // スライド数
     var MAX_SLIDE_NUM = slide_li.length;
 
-    var height = 0;
+    var largestSlideHeight = 0;
+    var largestContentHeight = 0;
     slide_li.each(function(i){
       // スライドの一番大きな高さを取得
-      if(height < $(this).height()){ height = $(this).height(); }
+      if(largestSlideHeight < $(this).height()){ largestSlideHeight = $(this).height(); }
+      if(largestContentHeight < slideContent.eq(i).height()){ largestContentHeight = slideContent.eq(i).height(); }
 
       // スライドの各左位置を保存&設定
       if(opts.type == "slideLeft"){
@@ -24,18 +27,8 @@
       }
     });
     // スライドの高さを最大値に固定
-    $(this).css("height", height);
-
-    // スライドからはみ出した部分を非表示にする
-    $(this).css("overflow", "hidden");
-
-    // スライドの配置を変更する
-    slide_li.css("position", "absolute");
-
-    if(opts.type == "slideLeft"){
-      slide_ul.css("position", "relative");
-      slide_li.css("float", "left");
-    }
+    $(this).css("height", largestSlideHeight);
+    slideContent.parents(opts.contentElement).css("height", largestContentHeight);
 
     if(opts.type == "fade"){
       // すべてのスライドを非表示にする
@@ -91,8 +84,8 @@
     });
 
     // 前後のナビ
-    var prev = $(".prev");
-    var next = $(".next");
+    var prev = arrowNav.find(".prev");
+    var next = arrowNav.find(".next");
     prev.on({
       click: function(){
         slideIterator--;
@@ -129,6 +122,7 @@
     fadeSpeed: 1500,
     nextSpeed: 5000,
     navElement: ".slide_nav",
+    arrowNavElement: ".arrow_nav",
     contentElement: ".slide_content",
     type: "fade"
   };
