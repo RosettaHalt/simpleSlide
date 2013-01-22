@@ -6,6 +6,7 @@
     var slide_ul = $(this).find("ul");
     var slide_li = $(this).find("li");
     var slideNav = $(opts.navElement).find("li");
+    var arrowNav = $(opts.arrowNavElement);
     var slideWidth = [0];
     var slideContent = $(opts.contentElement);
 
@@ -85,8 +86,8 @@
     });
 
     // 前後のナビ
-    var prev = $(".prev");
-    var next = $(".next");
+    var prev = arrowNav.find(".prev");
+    var next = arrowNav.find(".next");
     prev.on({
       click: function(){
         slideIterator--;
@@ -123,6 +124,7 @@
     fadeSpeed: 1500,
     nextSpeed: 5000,
     navElement: ".slide_nav",
+    arrowNavElement: ".arrow_nav",
     contentElement: ".slide_content",
     type: "fade"
   };
