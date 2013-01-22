@@ -8,15 +8,17 @@
     var slideNav = $(opts.navElement).find("li");
     var arrowNav = $(opts.arrowNavElement);
     var slideWidth = [0];
-    var slideContent = $(opts.contentElement);
+    var slideContent = $(opts.contentElement).find("li");;
 
     // スライド数
     var MAX_SLIDE_NUM = slide_li.length;
 
-    var largestHeight = 0;
+    var largestSlideHeight = 0;
+    var largestContentHeight = 0;
     slide_li.each(function(i){
       // スライドの一番大きな高さを取得
-      if(largestHeight < $(this).height()){ largestHeight = $(this).height(); }
+      if(largestSlideHeight < $(this).height()){ largestSlideHeight = $(this).height(); }
+      if(largestContentHeight < slideContent.eq(i).height()){ largestContentHeight = slideContent.eq(i).height(); }
 
       // スライドの各左位置を保存&設定
       if(opts.type == "slideLeft"){
@@ -25,7 +27,8 @@
       }
     });
     // スライドの高さを最大値に固定
-    $(this).css("height", largestHeight);
+    $(this).css("height", largestSlideHeight);
+    slideContent.parents(opts.contentElement).css("height", largestContentHeight);
 
     if(opts.type == "fade"){
       // すべてのスライドを非表示にする
