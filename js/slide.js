@@ -3,9 +3,9 @@
     var opts = $.extend({}, $.fn.SimpleSlider.defaults, options);
 
     var slideIterator = 0;
-    var slide_ul = $(this).children("ul");
-    var slide_li = $(this).children("ul").children("li");
-    var slideNav = $(opts.navElement).children("ul").children("li");
+    var slide_ul = $(this).find("ul");
+    var slide_li = $(this).find("li");
+    var slideNav = $(opts.navElement).find("li");
     var slideWidth = [0];
     var slideContent = $(opts.contentElement);
 
@@ -26,15 +26,9 @@
     // スライドの高さを最大値に固定
     $(this).css("height", height);
 
-    // スライドからはみ出した部分を非表示にする
-    $(this).css("overflow", "hidden");
-
-    // スライドの配置を変更する
-    slide_li.css("position", "absolute");
-
     if(opts.type == "slideLeft"){
-      slide_ul.css("position", "relative");
-      slide_li.css("float", "left");
+      // slide_ul.css("position", "relative");
+      // slide_li.css("float", "left");
     }
 
     if(opts.type == "fade"){
