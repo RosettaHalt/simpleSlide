@@ -2,8 +2,8 @@
 
 名前の通りシンプルなスライダです。  
 単体でもよく使うAPIを使用して組んでいるのでそれなりに読みやすいのかなぁと。  
-[DEMO](http://rosettahalt.github.com/simpleSlide/)
-[DEMO](http://rosettahalt.github.com/simpleSlide/index2.html)
+[DEMO1](http://rosettahalt.github.com/simpleSlide/)  
+[DEMO2](http://rosettahalt.github.com/simpleSlide/index2.html)
 
 ## Code
 オプションは以下のとおりです。  
