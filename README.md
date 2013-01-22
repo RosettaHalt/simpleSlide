@@ -3,9 +3,13 @@
 名前の通りシンプルなスライダです。  
 単体でもよく使うAPIを使用して組んでいるのでそれなりに読みやすいのかなぁと。  
 [DEMO](http://rosettahalt.github.com/simpleSlide/)
+[DEMO](http://rosettahalt.github.com/simpleSlide/index2.html)
 
 ## Code
 オプションは以下のとおりです。  
+navElementは番号でのナビゲーション、  
+arrowNavElementは前後のナビゲーション、  
+contentElementはメインスライドのスライド要素(画像の説明文など)。  
 typeの指定は現在 "fade", "slideLeft" の2つのみです。  
 ### jQuery
 ```html
@@ -14,6 +18,8 @@ $(function(){
     fadeSpeed: 1500,	// フェードのスピード
     nextSpeed: 5000,	// 次のスライドまでの待機時間
     navElement: ".slide_nav",	// ナビの要素
+    arrowNavElement: ".arrow_nav",  // 前後のナビの要素
+    contentElement: ".slide_content", // メインのスライド以外のコンテンツ要素
     type: "slideLeft"	// スライドのタイプ。
   });
 });
