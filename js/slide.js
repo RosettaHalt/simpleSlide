@@ -27,11 +27,6 @@
     // スライドの高さを最大値に固定
     $(this).css("height", height);
 
-    if(opts.type == "slideLeft"){
-      // slide_ul.css("position", "relative");
-      // slide_li.css("float", "left");
-    }
-
     if(opts.type == "fade"){
       // すべてのスライドを非表示にする
       slide_li.fadeOut(0);
