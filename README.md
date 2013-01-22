@@ -1,7 +1,7 @@
 # simpleSlide
 
 名前の通りシンプルなスライダです。  
-単体でもよく使うAPIを使用して組んでいるのでそれなりに読みやすいのかなぁと。  
+単体でもよく使うAPIを使用して組んでいるのでそれなりに読みやすいはずです。  
 [DEMO1](http://rosettahalt.github.com/simpleSlide/)  
 [DEMO2](http://rosettahalt.github.com/simpleSlide/index2.html)
 
@@ -9,7 +9,7 @@
 オプションは以下のとおりです。  
 navElementは番号でのナビゲーション、  
 arrowNavElementは前後のナビゲーション、  
-contentElementはメインスライドのスライド要素(画像の説明文など)。  
+contentElementはメインスライド以外のスライド要素(画像の説明文など)。  
 typeの指定は現在 "fade", "slideLeft" の2つのみです。  
 ### jQuery
 ```html
