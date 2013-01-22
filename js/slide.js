@@ -13,10 +13,10 @@
     // スライド数
     var MAX_SLIDE_NUM = slide_li.length;
 
-    var height = 0;
+    var largestHeight = 0;
     slide_li.each(function(i){
       // スライドの一番大きな高さを取得
-      if(height < $(this).height()){ height = $(this).height(); }
+      if(largestHeight < $(this).height()){ largestHeight = $(this).height(); }
 
       // スライドの各左位置を保存&設定
       if(opts.type == "slideLeft"){
@@ -25,7 +25,7 @@
       }
     });
     // スライドの高さを最大値に固定
-    $(this).css("height", height);
+    $(this).css("height", largestHeight);
 
     if(opts.type == "fade"){
       // すべてのスライドを非表示にする
