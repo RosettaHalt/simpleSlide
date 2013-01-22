@@ -1,10 +1,12 @@
 # simpleSlide
 
 名前の通りシンプルなスライダです。  
+単体でもよく使うAPIを使用して組んでいるのでそれなりに読みやすいのかなぁと。  
 [DEMO](http://rosettahalt.github.com/simpleSlide/)
 
 ## Code
-
+オプションは以下のとおりです。  
+typeの指定は現在 "fade", "slideLeft" の2つのみです。  
 ### jQuery
 ```html
 $(function(){
@@ -54,4 +56,3 @@ $(function(){
 </div>
 ```
 
-スライドのタイプは現在 "fade", "slideLeft" の2つのみです。
