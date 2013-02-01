@@ -27,7 +27,16 @@ $(function(){
 ```
 
 ### HTML
-書く要素はul>liの形で書いて下さい。  
+jQuery, jQuery Easing, simpleSlideのCSS/jsを読み込んで下さい。
+
+```html
+<link rel="stylesheet" href="css/style.css">
+<script src="//code.jquery.com/jquery-1.9.0.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="js/slide.js"></script>
+```
+
+要素はul>liの形で書いて下さい。  
 ```html
 <ul>
   <li></li>
