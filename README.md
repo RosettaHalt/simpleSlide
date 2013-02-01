@@ -3,7 +3,9 @@
 名前の通りシンプルなスライダです。  
 単体でもよく使うAPIを使用して組んでいるのでそれなりに読みやすいのかなぁと。  
 [DEMO1](http://rosettahalt.github.com/simpleSlide/)  
-[DEMO2](http://rosettahalt.github.com/simpleSlide/index2.html)
+[DEMO2](http://rosettahalt.github.com/simpleSlide/index2.html)  
+[DEMO3](http://rosettahalt.github.com/simpleSlide/index3.html)  
+[sample](http://rosettahalt.github.com/simpleSlide/sample.html)
 
 ## Code
 オプションは以下のとおりです。  
@@ -15,7 +17,7 @@ typeの指定は現在 "fade", "slideLeft" の2つのみです。
 ```html
 $(function(){
   $('#slide').SimpleSlider({
-    fadeSpeed: 1500,	// フェードのスピード
+    fadeSpeed: 1500,  // フェードのスピード
     nextSpeed: 5000,	// 次のスライドまでの待機時間
     navElement: ".slide_nav",	// ナビの要素
     arrowNavElement: ".arrow_nav",  // 前後のナビの要素
