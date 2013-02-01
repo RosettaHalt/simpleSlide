@@ -7,8 +7,8 @@
     var slide_li = $(this).find("li");
     var slideNav = $(opts.navElement).find("li");
     var arrowNav = $(opts.arrowNavElement);
-    var slideWidth = [0];
-    var slideContent = $(opts.contentElement).find("li");;
+    var slideSize = [0];
+    var slideContent = $(opts.contentElement).find("li");
 
     // スライド数
     var MAX_SLIDE_NUM = slide_li.length;
@@ -22,8 +22,13 @@
 
       // スライドの各左位置を保存&設定
       if(opts.type == "slideLeft"){
-        slideWidth.push( ($(this).width() + slideWidth[i]) );
-        slide_li.eq(i).css("left", slideWidth[i]);
+        slideSize.push( ($(this).width() + slideSize[i]) );
+        slide_li.eq(i).css("left", slideSize[i]);
+      }
+      if(opts.type == "slideTop"){
+        slideSize.push( ($(this).height() + slideSize[i]) );
+        slide_li.eq(i).css("top", slideSize[i]);
+        console.log(slideSize[i]);
       }
     });
     // スライドの高さを最大値に固定
@@ -64,11 +69,14 @@
         slide_li.eq(iter).fadeIn(opts.fadeSpeed);
       }
       else if(opts.type == "slideLeft"){
-        slide_ul.stop().animate( {"left":slideWidth[iter]*-1}, opts.fadeSpeed, "easeOutQuint" );
+        slide_ul.stop().animate( {"left":slideSize[iter]*-1}, opts.fadeSpeed, "easeOutQuint" );
+      }
+      else if(opts.type == "slideTop"){
+        slide_ul.stop().animate( {"top":slideSize[iter]*-1}, opts.fadeSpeed, "easeOutQuint" );
       }
 
-      slideContent.fadeOut(opts.fadeSpeed);
-      slideContent.eq(iter).fadeIn(opts.fadeSpeed);
+      slideContent.fadeOut(opts.fadeSpeed / 4);
+      slideContent.eq(iter).fadeIn(opts.fadeSpeed / 2);
 
       // currentクラスの移動
       slideNav.removeClass("current");
