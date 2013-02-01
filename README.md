@@ -12,7 +12,7 @@
 navElementは番号でのナビゲーション、  
 arrowNavElementは前後のナビゲーション、  
 contentElementはメインスライドのスライド要素(画像の説明文など)。  
-typeの指定は現在 "fade", "slideLeft" の2つのみです。  
+typeの指定は現在 "fade", "slideLeft", "slideTop" の3つのみです。  
 ### jQuery
 ```html
 $(function(){
@@ -29,7 +29,7 @@ $(function(){
 ```
 
 ### HTML
-書く要素はul>liの形で書いて下さい。  
+各要素はul>liの形で書いて下さい。  
 ```html
 <ul>
   <li></li>
@@ -38,29 +38,40 @@ $(function(){
 
 #### 例
 ```html
-<div id="slide">
-  <ul class="cf">
-    <li><a href=""><img src="img/img.png" height="480" width="720" alt=""></a></li>
-    <li><a href=""><img src="img/img.png" height="480" width="720" alt=""></a></li>
-    <li><a href=""><img src="img/img.png" height="480" width="720" alt=""></a></li>
-    <li><a href=""><img src="img/img.png" height="480" width="720" alt=""></a></li>
-    <li><a href=""><img src="img/img.png" height="480" width="720" alt=""></a></li>
-  </ul>
-</div>
-<div class="slide_nav cf">
-  <ul class="right cf">
-    <li class="current"><a href="">1</a></li>
-    <li><a href="">2</a></li>
-    <li><a href="">3</a></li>
-    <li><a href="">4</a></li>
-    <li><a href="">5</a></li>
-  </ul>
-</div>
-<div class="arrow cf">
-  <ul>
-    <li class="prev"><a href="" title="">prev</a></li>
-    <li class="next"><a href="" title="">next</a></li>
-  </ul>
+<div class="slide_box">
+  <div id="slide">
+    <ul class="cf">
+      <li><a href=""><img src="img/img01.png" height="480" width="720" alt=""></a></li>
+      <li><a href=""><img src="img/img02.png" height="480" width="720" alt=""></a></li>
+      <li><a href=""><img src="img/img03.png" height="480" width="720" alt=""></a></li>
+      <li><a href=""><img src="img/img04.png" height="480" width="720" alt=""></a></li>
+      <li><a href=""><img src="img/img05.png" height="480" width="720" alt=""></a></li>
+    </ul>
+  </div>
+  <div class="slide_content">
+    <ul>
+      <li><a href="">コンテンツその1</a></li>
+      <li><a href="">コンテンツその2</a></li>
+      <li><a href="">コンテンツその3</a></li>
+      <li><a href="">コンテンツその4</a></li>
+      <li><a href="">コンテンツその5</a></li>
+    </ul>
+  </div>
+  <div class="slide_nav">
+    <ul class="right">
+      <li class="current"><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+    </ul>
+  </div>
+  <div class="arrow_nav">
+    <ul>
+      <li class="prev"><a href="" title="">prev</a></li>
+      <li class="next"><a href="" title="">next</a></li>
+    </ul>
+  </div>
 </div>
 ```
 
