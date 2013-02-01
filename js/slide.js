@@ -8,7 +8,7 @@
     var slideNav = $(opts.navElement).find("li");
     var arrowNav = $(opts.arrowNavElement);
     var slideSize = [0];
-    var slideContent = $(opts.contentElement).find("li");;
+    var slideContent = $(opts.contentElement).find("li");
 
     // スライド数
     var MAX_SLIDE_NUM = slide_li.length;
@@ -75,8 +75,8 @@
         slide_ul.stop().animate( {"top":slideSize[iter]*-1}, opts.fadeSpeed, "easeOutQuint" );
       }
 
-      slideContent.fadeOut(opts.fadeSpeed);
-      slideContent.eq(iter).fadeIn(opts.fadeSpeed);
+      slideContent.fadeOut(opts.fadeSpeed / 4);
+      slideContent.eq(iter).fadeIn(opts.fadeSpeed / 2);
 
       // currentクラスの移動
       slideNav.removeClass("current");
